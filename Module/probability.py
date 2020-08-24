@@ -1,6 +1,6 @@
 import random
-from Module import mAth
-from Module import helper
+from module import mAth
+from module import helper
 
 Coin_HeadOrTail_Probability_Result_HeadList = []
 Coin_HeadOrTail_Probability_Result_TailList = []

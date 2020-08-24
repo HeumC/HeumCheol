@@ -1,5 +1,5 @@
 import math
-from Module import helper
+from module import helper
 
 MathConstant_Pi = math.pi
 MathConstant_e = math.e

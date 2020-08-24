@@ -1,6 +1,6 @@
-from Module import mAth
-from Module import time
-from Module import helper
+from module import mAth
+from module import time
+from module import helper
 
 Chinese_Zodiac_Signs_List = ['鼠' , '牛' , '虎' , '兔' , '龙' , '蛇' , '马' , '羊' , '猴' , '鸡' , '狗' , '猪']
 

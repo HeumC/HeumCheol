@@ -52,6 +52,12 @@ def Time_To_Kill_Calc(Damage, Armor_Level, RookArmor, Firing_Rate_Minute, Health
     TTK = (Kill_Bullet - 1) / Firing_Rate_Second
     return TTK * 1000
 
+def Head_Of_List():
+    print("|%12s|%12s|%12s|%12s" % ("名称".center(12), "类型".center(12), "伤害".center(12), "射速".center(12)), end="")
+    print("|%12s|%12s|%12s|%12s|%12s|%12s|" % ("TTK(1-RAF)".center(12), "TTK(2-RAF)".center(12), "TTK(3-RAF)".center(12)
+                                               , "TTK(1-RAT)".center(12), "TTK(1-RAT)".center(12),
+                                               "TTK(1-RAT)".center(12)))
+
 
 class Gun():
     def __init__(self, Name, Type,  Damage, Firing_Rate_Minute):
@@ -114,6 +120,7 @@ class Gun():
         print("枪械类型：%s" % self.Type)
         print("伤害：%d" % self.Damage)
         print("射速(每分钟子弹数)：%s" % self.Firing_Rate_Minute)
+        print()
         print("杀死（一甲）（无Rook甲）干员所需的子弹数：%d发" % self.KB_For_Armor_Level_One_Without_RookArmor)
         print("杀死（一甲）（无Rook甲）干员所需的时间：%.2fms" % self.TTK_For_Armor_Level_One_Without_RookArmor)
         print()
@@ -133,5 +140,39 @@ class Gun():
         print("杀死（三甲）（有Rook甲）干员所需的时间：%.2fms" % self.TTK_For_Armor_Level_Three_With_RookArmor)
         print()
 
-Gun("SMG-11", "自动手枪", 35, 1270).Information()
+    def ArrayInformation(self):
+        print("|%13s|%11s|%13s|%12s" % (self.Name.center(13), self.Type.center(11), str(self.Damage).center(13),
+                                        str(self.Firing_Rate_Minute).center(14)), end="")
+        print("|%12s|%12s|%12s|%12s|%12s|%12s|" % (
+            (str(round(self.TTK_For_Armor_Level_One_Without_RookArmor, 2)) + "ms").center(12),
+            (str(round(self.TTK_For_Armor_Level_Two_Without_RookArmor, 2)) + "ms").center(12),
+            (str(round(self.TTK_For_Armor_Level_Three_Without_RookArmor, 2)) + "ms").center(12)
+            , (str(round(self.TTK_For_Armor_Level_One_With_RookArmor, 2)) + "ms").center(12),
+            (str(round(self.TTK_For_Armor_Level_Two_With_RookArmor, 2)) + "ms").center(12),
+            (str(round(self.TTK_For_Armor_Level_Three_With_RookArmor, 2)) + "ms").center(12)))
+
+Head_Of_List()
+Gun("SMG-11", "自动手枪", 35, 1270).ArrayInformation()
+Gun("C75 Auto", "自动手枪", 35, 1000).ArrayInformation()
+
+Gun("LFP586", " 单发手枪", 78, 450).ArrayInformation()
+Gun("D-50", " 单发手枪", 71, 450).ArrayInformation()
+Gun("PMM", "单发手枪", 61, 450).ArrayInformation()
+Gun("Q-929", "单发手枪", 60, 450).ArrayInformation()
+Gun("M45 MEUSOC", "单发手枪", 58, 450).ArrayInformation()
+Gun("1911 TACOPS", "单发手枪", 55, 450).ArrayInformation()
+Gun("P229", "单发手枪", 51, 450).ArrayInformation()
+Gun("P226 Mk 25", "单发手枪", 50, 450).ArrayInformation()
+Gun(".44麦格农", "单发手枪", 61, 450).ArrayInformation()
 print()
+Gun("L85A2", "突击步枪", 47, 670).ArrayInformation()
+Gun("F2", "突击步枪", 37, 980).ArrayInformation()
+Gun("R4-c", "突击步枪", 39, 860).ArrayInformation()
+Gun("AK12", "突击步枪", 45, 850).ArrayInformation()
+print()
+Gun("417", "精确步枪", 69, 450).ArrayInformation()
+Gun("CAMRS", "精确步枪", 69, 450).ArrayInformation()
+Gun("AR-15 50", "精确步枪", 62, 450).ArrayInformation()
+Gun("SR-25", "精确步枪", 61, 450).ArrayInformation()
+Gun("MK 14 EBR", "精确步枪", 60, 450).ArrayInformation()
+print("###目前写到AK12###")
