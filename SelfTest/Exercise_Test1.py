@@ -1,4 +1,4 @@
-import HCheol_Exercise as HCER
+from Module import HCheol_Exercise as HCER
 
 # FBHS.Exercise_Human('韩鑫哲', 190, 104.5, 21, FBHS.Exercise_Enum.SEX_MALE, FBHS.Exercise_Enum.MIS_LEVEL_3,
 #                     FBHS.Exercise_Enum.MORPHY_MESOMORPHY, FBHS.Exercise_Enum.TARGET_REDUCE_FAT).Information()
