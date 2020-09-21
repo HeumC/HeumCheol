@@ -1,6 +1,6 @@
 import random
-from module import mAth
-from module import helper
+from Module import mAth
+from Module import helper
 
 Coin_HeadOrTail_Probability_Result_HeadList = []
 Coin_HeadOrTail_Probability_Result_TailList = []
@@ -42,6 +42,6 @@ def Probability_RollGun_Continuation(RollGun_SuccessNum , RollGun_AllNum , RollG
         return (nJ / (mJ * n_mJ)) * mp * n_mp
 def Probability_RollGun_Single(RollGun_AllNum , RollGun_Probability):
     RG_P_List = []
-    for f in helper.Helper_Range(0 , RollGun_AllNum):
+    for f in helper.Range(0 , RollGun_AllNum):
         RG_P_List.append(RollGun_Probability * ((1 - RollGun_Probability) ** f))
     return RG_P_List
